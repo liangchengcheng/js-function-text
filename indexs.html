@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>构造函数模式和单例模式配合</title>
+    <script type="text/javascript">
+
+        //这个单例构造我错在哪
+        var AA = {
+            function:zaomen(huawen){
+            if(!(this instanceof  zaomen)){
+                return new zaomen();
+            };
+            var _huawen="超级花纹";
+            if(huawen){
+                _huawen=huawen;
+            };
+            this.suo="普通锁";
+            this.huawen=_huawen;
+            this.create=function(){
+                return "锁"+this.suo+"花纹"+this.huawen;
+            }
+        }
+
+        //new zaomen();
+        var xiaozhang= AA.zaomen();
+        xiaozhang.create();
+    </script>
+</head>
+<body>
+
+</body>
+</html>
